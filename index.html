@@ -1,33 +1,67 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>삼진어묵 | 2027 시즌별 매체 ROAS 전망</title><style>
-:root{font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;color:#eaf0fa;background:#0a1220}*{box-sizing:border-box}body{margin:0}main{max-width:1350px;margin:auto;padding:38px 22px}h1{font-size:clamp(25px,4vw,39px);margin:8px 0 14px}.muted{color:#a5b5c9;line-height:1.7}.pill{display:inline-block;background:#174b48;color:#8cebd5;border-radius:30px;padding:6px 12px;font-size:13px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:25px 0}.card,.panel{background:#13243b;border:1px solid #30445d;border-radius:16px;padding:22px}.label{color:#b4c2d2;font-size:13px}.value{font-size:27px;font-weight:800;margin-top:8px}.panel{margin:17px 0;overflow:auto}.controls{display:flex;gap:14px;flex-wrap:wrap;align-items:end}label{font-size:14px;color:#b6c6d9}select,input{display:block;margin-top:8px;background:#203751;border:1px solid #52708b;color:white;padding:10px 12px;border-radius:8px;font-size:15px}input{width:110px}table{width:100%;border-collapse:collapse;white-space:nowrap}th,td{text-align:right;padding:13px 12px;border-bottom:1px solid #30445d;font-variant-numeric:tabular-nums}th{color:#9bd8d3;font-size:13px}td:first-child,th:first-child{text-align:left}td:nth-child(2),th:nth-child(2){text-align:left}.rate{width:76px;margin:0 auto;padding:7px 5px;text-align:center}.hint{font-size:12px;color:#a6b9ca}.up{color:#6ce4b9;font-weight:700}.warn{border-left:4px solid #e7b25c;background:#30291f;padding:17px 20px;border-radius:8px;color:#f4dfb8;line-height:1.75}button{background:#1f6f68;border:0;border-radius:8px;padding:11px 17px;color:white;cursor:pointer}small{color:#a8b7c7}footer{margin-top:28px;color:#8b9cb0;font-size:13px}@media(max-width:700px){.grid{grid-template-columns:1fr}.panel{padding:15px}main{padding:25px 12px}}@media print{body{background:white;color:#111}.card,.panel{background:white;color:#111}.muted,small{color:#555}button{display:none}}
-</style></head><body><main><span class="pill">2027 광고 운영 예상 성과</span><h1>삼진어묵 2027년 시즌별 · 매체별 예상 ROAS</h1><p class="muted">설날(1–2월) · 비시즌(3–7월) · 추석(8–9월) · 시즌(10–12월)<br>네이버 · 메타 · 구글 · 모비온 각각 광고비 <b>3% 증액</b>. 기존 실적과 2027년 시즌·매체별 예상 성과를 비교합니다.</p>
-<div class="panel"><div class="controls"><label>시즌 선택<select id="season"><option value="전체">전체 시즌</option><option>설날</option><option>비시즌</option><option>추석</option><option>시즌</option></select></label><button onclick="window.print()">인쇄 / PDF 저장</button></div><p class="muted" style="margin-bottom:0">2027년 예상 ROAS는 시즌·매체별 운영 효율 변화 가정을 반영해 산출했습니다.</p></div>
-<div class="grid"><div class="card"><div class="label">2027년 예상 광고비</div><div id="sumcost" class="value">—</div></div><div class="card"><div class="label">2027년 예상 전환매출</div><div id="sumrev" class="value">—</div></div><div class="card"><div class="label">2027년 예상 ROAS</div><div id="sumroas" class="value up">—</div></div></div>
-<div class="panel"><h2>시즌 · 매체별 실적 비교</h2><table><thead><tr><th>시즌</th><th>매체</th><th>기존 광고비</th><th>예상 광고비</th><th>기존 전환매출</th><th>예상 전환매출</th><th>기존 ROAS</th><th>2027 예상 ROAS</th><th>데이터 상태</th></tr></thead><tbody id="body"></tbody></table></div>
-<div class="warn"><b>데이터 및 전망 해석 시 유의사항</b><br>① 예상 광고비 = 기존 광고비 × 1.03. 예상 ROAS = 기존 ROAS × (1 + 시즌·매체별 효율 변화 가정). 예상 전환매출 = 예상 광고비 × 예상 ROAS. 효율 변화율은 제안서 작성용 가정이며, 실제 성과를 보장하지 않습니다.<br>② 메타 5~6월 실적은 자료가 없어 비시즌 집계에서 제외했습니다. 누락 월을 0원 실적으로 해석하면 안 됩니다.<br>③ 구글 8~9월은 제공받은 실제 광고비·전환매출을 반영했습니다. 네이버 4~9월 브랜드검색 비용은 제공된 비용을 반영한 기존 집계값을 사용했습니다.<br>④ 기존 추출 데이터는 2026년 월간 자료와 일부 2025년 자료가 혼재하며, 특히 10~12월은 2025년 매체 실적 기반입니다. 2026년 5월 원본의 매체별 합계와 전체 합계가 일치하지 않을 수 있습니다. 매체별 전환매출은 기여 중복 가능성이 있어 전체 자사몰 실매출과 다를 수 있습니다.</div><footer>단일 index.html · 2027년 예상 ROAS는 운영 효율 변화에 관한 가정에 기반한 시나리오입니다.</footer></main><script>
-const D=[{"season": "설날", "media": "네이버", "cost": 19949981, "revenue": 1083052414, "missing": [], "months": [1, 2]}, {"season": "설날", "media": "메타", "cost": 24885360, "revenue": 539742929, "missing": [], "months": [1, 2]}, {"season": "설날", "media": "구글", "cost": 4214248, "revenue": 181913764, "missing": [], "months": [1, 2]}, {"season": "설날", "media": "모비온", "cost": 5041742, "revenue": 191666780, "missing": [], "months": [1, 2]}, {"season": "비시즌", "media": "네이버", "cost": 22429049, "revenue": 255974416, "missing": [], "months": [3, 4, 5, 6, 7]}, {"season": "비시즌", "media": "메타", "cost": 6913022, "revenue": 45724133, "missing": [5, 6], "months": [3, 4, 7]}, {"season": "비시즌", "media": "구글", "cost": 4711786, "revenue": 35301798, "missing": [], "months": [3, 4, 5, 6, 7]}, {"season": "비시즌", "media": "모비온", "cost": 6244378, "revenue": 59008341, "missing": [], "months": [3, 4, 5, 6, 7]}, {"season": "추석", "media": "네이버", "cost": 12303079, "revenue": 1021212165, "missing": [], "months": [8, 9]}, {"season": "추석", "media": "메타", "cost": 15754399, "revenue": 511319004, "missing": [], "months": [8, 9]}, {"season": "추석", "media": "구글", "cost": 2810235, "revenue": 107850842, "missing": [], "months": [8, 9]}, {"season": "추석", "media": "모비온", "cost": 3472839, "revenue": 123759680, "missing": [], "months": [8, 9]}, {"season": "시즌", "media": "네이버", "cost": 19616106, "revenue": 396387882, "missing": [], "months": [10, 11, 12]}, {"season": "시즌", "media": "메타", "cost": 16244113, "revenue": 158103199, "missing": [], "months": [10, 11, 12]}, {"season": "시즌", "media": "구글", "cost": 1883876, "revenue": 44792972, "missing": [], "months": [10, 11, 12]}, {"season": "시즌", "media": "모비온", "cost": 5427587, "revenue": 55092839, "missing": [], "months": [10, 11, 12]}];
-// 시즌별 × 매체별 효율 변화 가정(%) — 실제 실적이 아닌 전망 시나리오.
-const TARGETS={
- '설날':{'네이버':2.5,'메타':4.0,'구글':3.0,'모비온':1.5},
- '비시즌':{'네이버':3.5,'메타':5.0,'구글':4.0,'모비온':2.0},
- '추석':{'네이버':1.5,'메타':3.5,'구글':2.5,'모비온':2.0},
- '시즌':{'네이버':3.0,'메타':4.5,'구글':3.5,'모비온':2.5}
-};
-const won=n=>Math.round(n).toLocaleString('ko-KR')+'원';
-const pct=n=>n.toLocaleString('ko-KR',{minimumFractionDigits:1,maximumFractionDigits:1})+'%';
-const key=x=>x.season+'|'+x.media;
-const rates=Object.fromEntries(D.map(x=>[key(x),TARGETS[x.season][x.media]]));
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>삼진어묵 2027 | 시즌별·매체별 예상 ROAS</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;color:#e9f2ff;background:#091422}
+*{box-sizing:border-box}body{margin:0}main{max-width:1440px;margin:auto;padding:40px 24px}
+h1{font-size:clamp(25px,3.8vw,40px);letter-spacing:-.04em;margin:10px 0 13px}
+h2{font-size:21px;margin:0 0 18px}.muted{color:#b3c3d5;line-height:1.7}
+.badge{display:inline-block;padding:7px 13px;border-radius:100px;background:#143f3b;color:#9bf2d4;font-size:13px;font-weight:700}
+.tag{display:inline-block;margin-left:8px;padding:6px 11px;border:1px solid #4b6c85;border-radius:100px;color:#d8e9fa;font-size:12px}
+.box{background:#12253a;border:1px solid #30475e;border-radius:18px;padding:22px;margin-top:18px}
+.controls{display:flex;align-items:end;justify-content:space-between;gap:15px;flex-wrap:wrap}
+label{display:block;font-size:13px;color:#a9c6d4}select{display:block;margin-top:7px;background:#203b55;color:white;border:1px solid #5d819a;border-radius:10px;padding:12px 16px;font-size:16px;min-width:190px}
+button{background:#19796f;color:#fff;border:0;border-radius:10px;padding:12px 18px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0}
+.card{background:linear-gradient(145deg,#142f48,#112337);border:1px solid #35516c;border-radius:16px;padding:22px}
+.label{color:#b8c9d9;font-size:14px}.value{font-size:clamp(22px,2.4vw,32px);font-weight:800;margin-top:10px}
+.sub{font-size:12px;color:#b2c7d9;margin-top:8px}.positive{color:#83e9be}
+.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap;font-variant-numeric:tabular-nums}
+th,td{padding:15px 11px;border-bottom:1px solid #30475e;text-align:right;font-size:14px}
+th{color:#9ee4d8;background:#18334a;font-size:13px}
+th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
+tr:hover td{background:#1b3349}.missing{color:#ffca7a}.note{line-height:1.8;color:#bdcbdc;font-size:13px}
+footer{color:#93a9bf;margin-top:28px;font-size:12px}
+@media(max-width:700px){main{padding:25px 12px}.grid{grid-template-columns:1fr}.box{padding:15px}}
+@media print{body{background:white;color:#111}.box,.card{background:white;color:#111;border-color:#aaa}button{display:none}th{background:#eee;color:#111}.muted,.note{color:#444}}
+</style></head><body><main>
+<span class="badge">2027년 광고 성과 전망</span><span class="tag">최신 수정본 · 2026.10.26</span>
+<h1>삼진어묵 2027년 시즌별 · 매체별 예상 ROAS</h1>
+<p class="muted">설날(1–2월) · 비시즌(3–7월) · 추석(8–9월) · 시즌(10–12월)<br>
+네이버 · 메타 · 구글 · 모비온 <strong>각각 광고비 3% 증액</strong> 기준으로 기존 실적과 2027년 예상 성과를 비교합니다.</p>
+<section class="box controls"><label>시즌 선택
+<select id="season"><option value="전체">전체 시즌</option><option>설날</option><option>비시즌</option><option>추석</option><option>시즌</option></select></label>
+<button type="button" onclick="window.print()">인쇄 / PDF 저장</button></section>
+<section class="grid">
+<div class="card"><div class="label">2027년 예상 광고비</div><div class="value" id="sumcost">—</div><div class="sub">매체별 기존 광고비 대비 +3%</div></div>
+<div class="card"><div class="label">2027년 예상 전환매출</div><div class="value" id="sumrev">—</div><div class="sub">매체별 예상 전환매출 합산</div></div>
+<div class="card"><div class="label">2027년 예상 ROAS</div><div class="value positive" id="sumroas">—</div><div class="sub">예상 전환매출 ÷ 예상 광고비</div></div>
+</section>
+<section class="box"><h2>시즌 · 매체별 성과 비교</h2><div class="scroll"><table>
+<thead><tr><th>시즌</th><th>매체</th><th>기존 광고비</th><th>예상 광고비</th><th>기존 전환매출</th><th>예상 전환매출</th><th>기존 ROAS</th><th>2027년 예상 ROAS</th><th>데이터 상태</th></tr></thead>
+<tbody id="rows"></tbody></table></div></section>
+<section class="box note"><strong>데이터 안내</strong><br>
+2027년 예상 광고비는 매체별 기존 광고비의 103%입니다. 예상 ROAS와 예상 전환매출은 시즌·매체별 별도 전망 수치를 적용한 추정치로, 실제 실적을 보장하지 않습니다.<br>
+메타 5~6월 자료는 없어 비시즌 집계에서 제외했습니다. 구글 8~9월 실적 및 제공된 네이버 브랜드검색 비용을 반영했습니다.<br>
+원본 데이터에는 2025년·2026년 실적이 혼재하며, 특히 10~12월은 2025년 자료 기준입니다. 매체별 전환매출 합계는 중복 기여 가능성이 있어 자사몰 실제 총매출과 다를 수 있습니다.</section>
+<footer>삼진어묵 2027년 시즌별 · 매체별 광고 성과 전망 | 단일 index.html</footer>
+</main><script>
+const D=[{"season":"설날","media":"네이버","cost":19949981,"revenue":1083052414,"missing":[],"forecastCost":20548480,"forecastRoas":5564.56,"forecastRevenue":1143432499},{"season":"설날","media":"메타","cost":24885360,"revenue":539742929,"missing":[],"forecastCost":25631921,"forecastRoas":2255.67,"forecastRevenue":578171552},{"season":"설날","media":"구글","cost":4214248,"revenue":181913764,"missing":[],"forecastCost":4340675,"forecastRoas":4446.14,"forecastRevenue":192992487},{"season":"설날","media":"모비온","cost":5041742,"revenue":191666780,"missing":[],"forecastCost":5192994,"forecastRoas":3858.62,"forecastRevenue":200377905},{"season":"비시즌","media":"네이버","cost":22429049,"revenue":255974416,"missing":[],"forecastCost":23101920,"forecastRoas":1181.21,"forecastRevenue":272882189},{"season":"비시즌","media":"메타","cost":6913022,"revenue":45724133,"missing":[5,6],"forecastCost":7120413,"forecastRoas":694.49,"forecastRevenue":49450556},{"season":"비시즌","media":"구글","cost":4711786,"revenue":35301798,"missing":[],"forecastCost":4853140,"forecastRoas":779.19,"forecastRevenue":37815182},{"season":"비시즌","media":"모비온","cost":6244378,"revenue":59008341,"missing":[],"forecastCost":6431709,"forecastRoas":963.88,"forecastRevenue":61993957},{"season":"추석","media":"네이버","cost":12303079,"revenue":1021212165,"missing":[],"forecastCost":12672171,"forecastRoas":8424.97,"forecastRevenue":1067626605},{"season":"추석","media":"메타","cost":15754399,"revenue":511319004,"missing":[],"forecastCost":16227031,"forecastRoas":3359.16,"forecastRevenue":545091935},{"season":"추석","media":"구글","cost":2810235,"revenue":107850842,"missing":[],"forecastCost":2894542,"forecastRoas":3933.73,"forecastRevenue":113863467},{"season":"추석","media":"모비온","cost":3472839,"revenue":123759680,"missing":[],"forecastCost":3577024,"forecastRoas":3634.92,"forecastRevenue":130021961},{"season":"시즌","media":"네이버","cost":19616106,"revenue":396387882,"missing":[],"forecastCost":20204589,"forecastRoas":2081.35,"forecastRevenue":420528213},{"season":"시즌","media":"메타","cost":16244113,"revenue":158103199,"missing":[],"forecastCost":16731436,"forecastRoas":1017.09,"forecastRevenue":170173762},{"season":"시즌","media":"구글","cost":1883876,"revenue":44792972,"missing":[],"forecastCost":1940392,"forecastRoas":2460.92,"forecastRevenue":47751495},{"season":"시즌","media":"모비온","cost":5427587,"revenue":55092839,"missing":[],"forecastCost":5590415,"forecastRoas":1040.43,"forecastRevenue":58164355}];
+const money=n=>Math.round(n).toLocaleString('ko-KR')+'원';
+const percent=n=>n.toLocaleString('ko-KR',{minimumFractionDigits:1,maximumFractionDigits:1})+'%';
 function draw(){
- let season=document.getElementById('season').value;
- let data=D.filter(x=>season==='전체'||x.season===season),tc=0,tr=0;
- document.getElementById('body').innerHTML=data.map(x=>{
-   let nc=x.cost*1.03,roas=x.cost?x.revenue/x.cost:0,rate=rates[key(x)]||0,nr=nc*roas*(1+rate/100);
-   tc+=nc;tr+=nr;
-   return `<tr><td>${x.season}</td><td>${x.media}</td><td>${won(x.cost)}</td><td>${won(nc)}</td><td>${won(x.revenue)}</td><td data-revenue="${key(x)}">${won(nr)}</td><td>${pct(roas*100)}</td><td class="up" data-roas="${key(x)}">${pct(roas*(1+rate/100)*100)}</td><td>${x.missing.length?'일부 누락: '+x.missing.join(', ')+'월':'집계됨'}</td></tr>`;
+ const chosen=document.getElementById('season').value;
+ const selected=D.filter(x=>chosen==='전체'||x.season===chosen);
+ let cost=0,revenue=0;
+ document.getElementById('rows').innerHTML=selected.map(x=>{
+  cost+=x.forecastCost;revenue+=x.forecastRevenue;
+  const oldRoas=x.revenue/x.cost*100;
+  const status=x.missing.length?'일부 누락 ('+x.missing.join(', ')+'월)':'집계됨';
+  return `<tr><td>${x.season}</td><td>${x.media}</td><td>${money(x.cost)}</td><td>${money(x.forecastCost)}</td><td>${money(x.revenue)}</td><td>${money(x.forecastRevenue)}</td><td>${percent(oldRoas)}</td><td class="positive"><strong>${percent(x.forecastRoas)}</strong></td><td class="${x.missing.length?'missing':''}">${status}</td></tr>`;
  }).join('');
- document.getElementById('sumcost').textContent=won(tc);
- document.getElementById('sumrev').textContent=won(tr);
- document.getElementById('sumroas').textContent=pct(tc?tr/tc*100:0);
+ document.getElementById('sumcost').textContent=money(cost);
+ document.getElementById('sumrev').textContent=money(revenue);
+ document.getElementById('sumroas').textContent=percent(cost?revenue/cost*100:0);
 }
 document.getElementById('season').addEventListener('change',draw);
 draw();
